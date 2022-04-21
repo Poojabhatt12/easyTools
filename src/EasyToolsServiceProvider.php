@@ -64,9 +64,9 @@ class EasyToolsServiceProvider extends ServiceProvider
         ], 'easytools.config');
 
         // Publishing the views.
-        /*$this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor/stability'),
-        ], 'easytools.views');*/
+        $this->publishes([
+            __DIR__.'/../database/migrations/2022_03_24_074733_create_job_details_table.php' => base_path('database/migrations'),
+        ], 'easytools.migrations');
 
         // Publishing assets.
         /*$this->publishes([

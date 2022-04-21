@@ -19,7 +19,8 @@ class JobDetailController extends Controller
     {
         $jobDetails = $jobDetail->searchJobs();
         $columns = Schema::getColumnListing('job_details');
-        return view("stability::jobDetail.index", compact('jobDetails', 'columns'));
+        return $jobDetails;
+        // return view("stability::jobDetail.index", compact('jobDetails', 'columns'));
     }
 
     public function destroy($jId)
