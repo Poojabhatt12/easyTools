@@ -63,9 +63,9 @@ class EasyToolsServiceProvider extends ServiceProvider
             __DIR__.'/../config/easytools.php' => config_path('easytools.php'),
         ], 'easytools.config');
 
-        // Publishing the views.
+        // Publishing the migrations.
         $this->publishes([
-            __DIR__.'/../database/migrations/2022_03_24_074733_create_job_details_table.php' => base_path('database/migrations/2022_03_24_074733_create_job_details_table.php'),
+            __DIR__.'/../database/migrations/2022_03_24_074733_create_job_details_table.php' => base_path('database/migrations/pooja.php'),
         ], 'easytools.migrations');
 
         // Publishing assets.
