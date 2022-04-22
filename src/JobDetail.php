@@ -15,15 +15,16 @@ class JobDetail extends Model
 
     public function searchJobs()
     {
+        $modelClass = config('easytools.model');
         $searchTerm = request()->get('search_job_name');
         $cityTerm = request()->get('search_city');
 
         if ($searchTerm || $cityTerm) {
-            $jobDetails = JobDetail::where('job_name', 'LIKE', "%" . $searchTerm . "%")
+            $jobDetails = $modelClass::where('job_name', 'LIKE', "%" . $searchTerm . "%")
                 ->where('city', 'LIKE', "%" . $cityTerm . "%")
                 ->paginate(10);
         } else {
-            $jobDetails = JobDetail::paginate(10);
+            $jobDetails = $modelClass::paginate(10);
         }
 
         return $jobDetails;

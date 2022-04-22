@@ -25,14 +25,16 @@ class JobDetailController extends Controller
 
     public function destroy($jId)
     {
-        $jobDetail = JobDetail::find($jId);
+        $modelClass = config('easytools.model');
+        $jobDetail = $modelClass::find($jId);
         $jobDetail->delete();
         return back();
     }
 
     public function deleteSelected(Request $request)
     {
-        JobDetail::whereIn('id', explode(",", $request->ids))->delete();
+        $modelClass = config('easytools.model');
+        $modelClass::whereIn('id', explode(",", $request->ids))->delete();
 
         return response()->json(['success' => "Job-Detail Deleted successfully."]);
     }
