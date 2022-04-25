@@ -18,7 +18,7 @@ class JobDetailController extends Controller
     public function index(JobDetail $jobDetail)
     {
         $jobDetails = $jobDetail->searchJobs();
-        $modelClass = config('easytools.model')->getTable();
+        $modelClass = app(config('easytools.model'))->getTable();
         $columns = Schema::getColumnListing($modelClass);
         // return $jobDetails;
         return view("stability::jobDetail.index", compact('jobDetails', 'columns'));
