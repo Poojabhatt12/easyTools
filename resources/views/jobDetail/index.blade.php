@@ -17,11 +17,11 @@
         <form action="" id="">
           <div class="row align-items-end">
             <div class="col-md-3 col-sm-4">
-              <label for="date" class="control-label">Job Name</label>
+              <label for="date" class="control-label">Created_at</label>
               <input type="text" name="search_job_name" id="job name" class="form-control form-control-sm rounded-0" value="{{request('search_job_name')}}">
             </div>
             <div class="col-md-3 col-sm-4">
-              <label for="time" class="control-label">City</label>
+              <label for="time" class="control-label">Updated_at</label>
               <input type="text" name="search_city" id="city" class="form-control form-control-sm rounded-0" value="{{request('search_city')}}">
             </div>
             <div class="col-md-3 col-sm-4">
