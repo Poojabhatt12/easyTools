@@ -16,12 +16,11 @@ class JobDetail extends Model
     public function searchJobs()
     {
         $modelClass = config('easytools.model');
-        $searchTerm = request()->get('search_job_name');
-        $cityTerm = request()->get('search_city');
+        $from =  request()->get('search_created_at_from');
+        $to = request()->get('search_created_at_to');
 
-        if ($searchTerm || $cityTerm) {
-            $jobDetails = $modelClass::where('job_name', 'LIKE', "%" . $searchTerm . "%")
-                ->where('city', 'LIKE', "%" . $cityTerm . "%")
+        if ($from || $to) {
+            app($modelClass)::whereBetween('created_at', [$from, $to])
                 ->paginate(10);
         } else {
             $jobDetails = $modelClass::paginate(10);
