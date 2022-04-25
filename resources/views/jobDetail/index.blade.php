@@ -21,7 +21,7 @@
               <input type="date" name="search_created_at_from" id="created at" class="form-control form-control-sm rounded-0" value="{{request('search_created_at_from')}}">
             </div>
             <div class="col-md-3 col-sm-4">
-              <label for="time" class="control-label">To</label>
+              <label for="date" class="control-label">To</label>
               <input type="date" name="search_created_at_to" id="updated at" class="form-control form-control-sm rounded-0" value="{{request('search_created_at_to')}}">
             </div>
             <div class="col-md-3 col-sm-4">

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class JobDetail extends Model
 {
 
-    use HasFactory;
     // protected $guarded =[];
 
     protected $fillable = ['job_id', 'job_name', 'city'];
@@ -20,7 +19,7 @@ class JobDetail extends Model
         $to = request()->get('search_created_at_to');
 
         if ($from || $to) {
-            app($modelClass)::whereBetween('created_at', [$from, $to])
+            $jobDetails = app($modelClass)::whereBetween('created_at', [$from, $to])
                 ->paginate(10);
         } else {
             $jobDetails = $modelClass::paginate(10);
