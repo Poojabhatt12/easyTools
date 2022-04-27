@@ -11,7 +11,7 @@
 
 <body>
   <div class="container">
-    <h1>Job Search</h1>
+    <h1>Remover Tool</h1>
     <div class="row">
       <div class="col-sm-12 bg-secondary">
         <form action="" id="">
