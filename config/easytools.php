@@ -3,3 +3,4 @@
 return [
    "model"=>"Stability\EasyTools\JobDetail"
 ];
+
